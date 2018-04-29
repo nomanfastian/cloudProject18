@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>My Resturants</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Destroy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @resturants.each do |attr| %>
+      <tr>
+        <td><%= attr.name %></td>
+        <td><%= link_to "Edit", edit_resturant_path(attr) %></td>
+        <td><%= link_to "Delete", resturant_path(attr), :confirm => "Are you sure?", :method => :delete %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,27 @@
+<div class = "container" >
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @resturant.name %>
+  </p>
+  <%= image_tag @resturant.avatar.url(:medium) %>
+  <br> 
+  <% if current_user %>
+  <p>
+    <Strong> Average Ratings: </Strong> <%= rating_for @resturant, 'name' %>
+  </p>
+  <% end %>
+  <strong> Reviews: </strong>
+  <%if @reviews.present? %>
+    <% @reviews.each do |review| %>
+      <p> <%=review.user.email %>  <%= review.description %> </p>
+    <% end %>
+  <% end %>
+   <% if current_user %>
+    <%= form_for Review.new, url:  {action: "create_review"} do |f| %>
+      <%= f.text_field :description %>
+      <%= f.submit "Review" %>
+    <% end %>
+  <% end %>
+</div>

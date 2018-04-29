@@ -1,0 +1,11 @@
+<div class = "container">
+  <div class = "row">
+  <% @hotels.each_with_index do |hotel, index| %>
+    <div class = "col-lg-4 col-md-4  col-sm-4">
+      <%= image_tag hotel.avatar.url(:medium) %>
+      <br>
+      <%= link_to hotel.name, hotel_path(hotel) %>
+    </div>
+  <% end %>
+</div>
+</div>

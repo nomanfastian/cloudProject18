@@ -1,0 +1,18 @@
+<div class = "container" >
+
+  <!--  Noman Maqsood -->
+  <h2> Attractions </h2>
+  <% if @attractions.present? %>
+    <div class = "container">
+      <div class = "row">
+      <% @attractions.each_with_index do |attraction, index| %>
+        <div class = "col-lg-4 col-md-4  col-sm-4">
+          <%= image_tag attraction.avatar.url(:medium) %>
+          <br>
+          <%= link_to attraction.name, attraction_path(attraction) %>
+        </div>
+      <% end %>
+    </div>
+    </div>
+  <% end %>
+</div>

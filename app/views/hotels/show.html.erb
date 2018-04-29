@@ -1,0 +1,22 @@
+<div class = "container" >
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @hotel.name %>
+  </p>
+  <%= image_tag @hotel.avatar.url(:medium) %>
+  <br> 
+  <p>
+    <strong>Description:</strong>
+    <%= @hotel.description %>
+  </p>
+  <% if current_user %>
+    <% if current_user.user_type != 1 %>
+      <p>
+        <Strong> Average Ratings: </Strong> <%= rating_for @hotel, 'name' %>
+      </p>
+    <% end %>
+    
+  <% end %>
+</div>

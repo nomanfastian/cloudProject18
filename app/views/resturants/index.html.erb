@@ -1,0 +1,16 @@
+<div class = "container" >
+  <h2> Resturants </h2>
+  <% if @resturants.present? %>
+    <div class = "container">
+      <div class = "row">
+      <% @resturants.each do |resturant| %>
+        <div class = "col-lg-4 col-md-4  col-sm-4">
+          <%= image_tag resturant.avatar.url(:medium) %>
+          <br>
+          <%= link_to resturant.name, resturant_path(resturant) %>
+        </div>
+      <% end %>
+    </div>
+    </div>
+  <% end %>
+</div>

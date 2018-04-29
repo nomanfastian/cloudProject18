@@ -1,0 +1,14 @@
+<div class = "container" >
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @attraction.name %>
+  </p>
+  <%= image_tag @attraction.avatar.url(:medium) %>
+  <br> 
+  <p>
+    <strong>Description:</strong>
+    <%= @attraction.description %>
+  </p>
+</div>
